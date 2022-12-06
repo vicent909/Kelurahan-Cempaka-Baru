@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Splash, Home, Document } from '../pages'
+import { Splash, Home, Document, DocumentDetail } from '../pages'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../component';
@@ -23,6 +23,7 @@ const Router = () => {
     <Stack.Navigator initialRouteName="MainApp" >
       <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
       <Stack.Screen name="MainApp" component={MainApp} options={{headerShown: false}} />
+      <Stack.Screen name="DocumentDetail" component={DocumentDetail} options={{headerShown: false}} />
     </Stack.Navigator>
   )
 }
