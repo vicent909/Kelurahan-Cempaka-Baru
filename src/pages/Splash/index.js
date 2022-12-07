@@ -1,9 +1,16 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, {useEffect} from 'react'
 import { DKI } from '../../assets'
 import { colors, fonts } from '../../utils'
 
-const Splash = () => {
+const Splash = ({navigation}) => {
+
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.replace('MainApp')
+        }, 2000)
+    })
+
   return (
     <View style={styles.container} >
         <Image source={DKI} style={styles.logo} />

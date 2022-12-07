@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { colors, fonts } from '../../utils'
 import { DocumentItem } from '../../component'
 import { Fire } from '../../config'
+import { ScrollView } from 'react-native'
 
 const Document = ({navigation}) => {
 
@@ -13,7 +14,6 @@ const Document = ({navigation}) => {
       .ref('dokumen/')
       .once('value')
       .then(res => {
-        console.log('res: ', res.val())
         if(res.val()){
           setData(res.val())
         }
@@ -22,14 +22,14 @@ const Document = ({navigation}) => {
 
   return (
     <View style={styles.backcontainer}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false} >
         <Text style={styles.text} >Mau mengurus dokumen apa hari ini?</Text>
         {data.map(item => {
           return(
-            <DocumentItem title={item.category} onPress={() => navigation.navigate('DocumentDetail')}  />
+            <DocumentItem title={item.category} onPress={() => navigation.navigate('DocumentDetail', item)}  />
           )
         })}
-      </View>
+      </ScrollView>
     </View>
   )
 }

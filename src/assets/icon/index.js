@@ -3,6 +3,8 @@ import IcHomeActive from './home-active.svg'
 import IcDocument from './document.svg'
 import IcDocumentActive from './document-active.svg'
 import IdCard from './idcard.png'
+import IcBack from './back.svg'
+import IcPdf from './pdf.png'
 
 export {
     IcHome,
@@ -10,4 +12,6 @@ export {
     IcDocument,
     IcDocumentActive,
     IdCard,
+    IcBack,
+    IcPdf,
 }

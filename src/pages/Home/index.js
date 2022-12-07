@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     maxWidth: 250,
   },
   kantor:{
-    height: 182,
-    width: 182,
+    height: 200,
+    width: 200,
     marginTop: 20,
     marginBottom: 12
   },
