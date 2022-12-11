@@ -1,12 +1,42 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors, fonts } from '../../../utils'
-import { IdCard } from '../../../assets'
+import { IcBlank, IcKartuKeluarga, IcSuratKawin, IcSuratPindah, IdCard } from '../../../assets'
 
 const DocumentItem = ({title, onPress}) => {
+
+    const Icon = () => {
+        if(title === 'Pengurusan KTP'){ 
+            return(
+                <Image source={IdCard} style={styles.icon} />
+            )
+        }
+        if(title === 'Pengurusan Surat Pindah'){ 
+            return(
+                <Image source={IcSuratPindah} style={styles.icon} />
+            )
+        }
+        if(title === ['Pengurusan Kartu Keluarga Baru' , 'Perubahan Kartu Keluarga']){ 
+            return(
+                <Image source={IcKartuKeluarga} style={styles.icon} />
+            )
+        }
+        if(title === 'Pengurusan Surat Kawin'){ 
+            return(
+                <Image source={IcSuratKawin} style={styles.icon} />
+            )
+        }
+        else{
+            return(
+                <Image source={IcBlank} style={styles.icon} />
+            )
+        }
+
+    }
+
   return (
     <TouchableOpacity style={styles.container} onPress={onPress} >
-        <Image source={IdCard} style={styles.icon} />
+        <Icon />
         <View style={styles.textWrapper} >
             <Text style={styles.text} >{title}</Text>
         </View>
